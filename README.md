@@ -29,8 +29,8 @@ Một hệ thống quản lý bot Minecraft mạnh mẽ với giao diện web, h
 ### Cài đặt
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/minecraft-bot-controller.git
-cd minecraft-bot-controller
+git clone https://github.com/client1429/Minecraft-Bot-Controller-Clone.git
+cd Minecraft-Bot-Controller-Clone
 
 # Cài đặt dependencies
 npm install

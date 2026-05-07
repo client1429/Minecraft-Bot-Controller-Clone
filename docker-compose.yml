@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  minecraft-bot:
+    build: .
+    container_name: minecraft-bot-controller
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs
+      - ./screenshots:/app/screenshots
+    networks:
+      - bot-network
+
+networks:
+  bot-network:
+    driver: bridge

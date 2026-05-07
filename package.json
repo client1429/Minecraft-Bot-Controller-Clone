@@ -1,0 +1,28 @@
+{
+  "name": "minecraft-bot-controller",
+  "version": "1.0.0",
+  "description": "GUI control system for Minecraft bot with captcha solving",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "diagnose": "node diagnose-connection.js",
+    "mock-server": "node mock-server.js",
+    "fix": "echo \"See CONNECTION_FIX.md for troubleshooting\""
+  },
+  "dependencies": {
+    "canvas": "^3.2.3",
+    "express": "^4.18.2",
+    "jimp": "^1.6.1",
+    "mineflayer": "^4.14.0",
+    "prismarine-viewer": "^1.33.0",
+    "screenshot-desktop": "^1.15.0",
+    "sharp": "^0.32.6",
+    "socket.io": "^4.6.1",
+    "tesseract.js": "^5.0.4",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

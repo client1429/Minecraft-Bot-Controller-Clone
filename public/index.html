@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Bot Controller - Multi-Account Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Minecraft Bot Controller</h1>
+        <p class="glow-text">✓ Multi-Account Management | ✓ In-Game Rendering | ✓ Auto Captcha Solver</p>
+        
+        <div class="status-card">
+            <div class="status-header">
+                <span class="status-dot" id="systemStatusDot"></span>
+                <span id="systemStatusText">System Ready</span>
+                <span style="margin-left: auto; font-size: 12px; color: #888;">
+                    Active Bots: <span id="activeBotsCount">0</span>
+                </span>
+            </div>
+        </div>
+        
+        <div class="main-grid">
+            <!-- Create Bot Panel -->
+            <div class="panel">
+                <h3>🤖 Create New Bot</h3>
+                <div class="form-group">
+                    <label>Server Host:</label>
+                    <input type="text" id="serverHost" placeholder="localhost" value="localhost">
+                </div>
+                <div class="form-group">
+                    <label>Server Port:</label>
+                    <input type="number" id="serverPort" placeholder="25565" value="25565">
+                </div>
+                <div class="form-group">
+                    <label>Bot Username:</label>
+                    <input type="text" id="botUsername" placeholder="BotPlayer">
+                </div>
+                <div class="form-group">
+                    <label>Password (if any):</label>
+                    <input type="password" id="botPassword" placeholder="Optional">
+                </div>
+                <button id="createBotBtn" class="btn-primary">➕ Create Bot</button>
+                <button id="disconnectAllBtn" class="btn-danger" style="margin-top: 10px;">🔌 Disconnect All</button>
+            </div>
+            
+            <!-- Bots List Panel -->
+            <div class="panel">
+                <h3>📋 Bot Accounts</h3>
+                <div id="botsList" class="bots-list">
+                    <p style="color: #888; text-align: center;">No bots connected. Create one to start.</p>
+                </div>
+            </div>
+            
+            <!-- Bot Controls -->
+            <div class="panel">
+                <h3>🎮 Bot Controls</h3>
+                <div class="form-group">
+                    <label>Select Bot:</label>
+                    <select id="selectedBot">
+                        <option value="">-- Select a bot --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Command:</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="commandInput" placeholder="Type /command or message" style="flex: 1;">
+                        <button id="sendCommandBtn" class="btn-secondary">Send</button>
+                    </div>
+                </div>
+                <div class="quick-commands">
+                    <button class="quick-cmd">/help</button>
+                    <button class="quick-cmd">/list</button>
+                    <button class="quick-cmd">/spawn</button>
+                    <button class="quick-cmd">Hello!</button>
+                    <button class="quick-cmd">/me is here</button>
+                </div>
+            </div>
+            
+            <!-- Screenshot Panel -->
+            <div class="panel">
+                <h3>📸 In-Game View</h3>
+                <div class="screenshot-container">
+                    <canvas id="screenshotCanvas"></canvas>
+                </div>
+                <div class="button-group">
+                    <button id="captureScreenshotBtn" class="btn-primary">📷 Capture View</button>
+                    <button id="solveCaptchaBtn" class="btn-secondary">🔍 Auto Solve Captcha</button>
+                </div>
+                <div id="captchaResult" class="captcha-result"></div>
+            </div>
+            
+            <!-- Logs Panel -->
+            <div class="panel log-panel">
+                <h3>📜 System Logs</h3>
+                <div id="logMessages" class="log-container"></div>
+                <button id="clearLogBtn" class="btn-small" style="margin-top: 10px;">Clear Logs</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
